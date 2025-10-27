@@ -2,6 +2,7 @@ import express from "express";
 import helmet from "helmet";
 import bodyParser from "body-parser";
 import morgan from "morgan";
+import { clerkMiddleware } from "@clerk/express";
 
 import { morganStream } from "./config/logger.js";
 import healthRouter from "./routes/health.js";
@@ -17,6 +18,8 @@ app.use(helmet());
 app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("combined", { stream: morganStream }));
+
+app.use(clerkMiddleware());
 
 app.use("/api/health", healthRouter);
 app.use("/api/inngest", inngestHandler);

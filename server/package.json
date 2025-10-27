@@ -15,6 +15,7 @@
     "prisma:db:push": "prisma db push"
   },
   "dependencies": {
+    "@clerk/express": "^1.7.42",
     "@prisma/client": "^6.18.0",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.5",

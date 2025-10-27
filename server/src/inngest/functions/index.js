@@ -17,7 +17,7 @@ const pickClerkUser = (data) => {
   };
 };
 
-export const clerkUserCreated = inngest.createFunction(
+const clerkUserCreated = inngest.createFunction(
   { id: "clerk.user.created" },
   { event: "clerk/user.created" },
   async ({ event, step }) => {
@@ -34,7 +34,7 @@ export const clerkUserCreated = inngest.createFunction(
   }
 );
 
-export const clerkUserUpdated = inngest.createFunction(
+const clerkUserUpdated = inngest.createFunction(
   { id: "clerk.user.updated" },
   { event: "clerk/user.updated" },
   async ({ event, step }) => {
@@ -48,7 +48,7 @@ export const clerkUserUpdated = inngest.createFunction(
   }
 );
 
-export const clerkUserDeleted = inngest.createFunction(
+const clerkUserDeleted = inngest.createFunction(
   { id: "clerk.user.deleted" },
   { event: "clerk/user.deleted" },
   async ({ event, step }) => {
@@ -60,3 +60,5 @@ export const clerkUserDeleted = inngest.createFunction(
     });
   }
 );
+
+export const functions = [clerkUserCreated, clerkUserUpdated, clerkUserDeleted];
