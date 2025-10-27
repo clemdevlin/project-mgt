@@ -21,6 +21,16 @@ app.use(morgan("combined", { stream: morganStream }));
 
 app.use(clerkMiddleware());
 
+app.get("/", (req, res) => {
+  res
+    .status(201)
+    .json({
+      name: "Project Management API",
+      description: "Project Management API for Project Mangement",
+      health: "GET api/health",
+    });
+});
+
 app.use("/api/health", healthRouter);
 app.use("/api/inngest", inngestHandler);
 

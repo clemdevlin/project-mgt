@@ -1,0 +1,3 @@
+{"level":"info","message":"Server listening on port 5001","service":"project-management-api","timestamp":"2025-10-27T22:49:08.180Z"}
+{"level":"info","message":"::1 - - [27/Oct/2025:22:49:36 +0000] \"GET / HTTP/1.1\" 404 21 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"","service":"project-management-api","timestamp":"2025-10-27T22:49:36.494Z"}
+{"level":"info","message":"::1 - - [27/Oct/2025:22:49:36 +0000] \"GET /favicon.ico HTTP/1.1\" 404 21 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"","service":"project-management-api","timestamp":"2025-10-27T22:49:36.728Z"}
