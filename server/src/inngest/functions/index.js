@@ -1,10 +1,10 @@
-import { inngest } from "../client.js";
-import { prisma } from "../../lib/prisma.js";
+import { inngest } from '../client.js';
+import { prisma } from '../../lib/prisma.js';
 
-const pickClerkUser = (data) => {
+const pickClerkUser = data => {
   const primaryId = data?.primary_email_address_id;
   const emails = data?.email_addresses || [];
-  const primary = emails.find((e) => e.id === primaryId) || emails[0];
+  const primary = emails.find(e => e.id === primaryId) || emails[0];
   const email = primary?.email_address || null;
   return {
     id: data?.id,
@@ -18,10 +18,10 @@ const pickClerkUser = (data) => {
 };
 
 const clerkUserCreated = inngest.createFunction(
-  { id: "clerk.user.created" },
-  { event: "clerk/user.created" },
+  { id: 'clerk.user.created' },
+  { event: 'clerk/user.created' },
   async ({ event, step }) => {
-    return step.run("create-user", async () => {
+    return step.run('create-user', async () => {
       const user = pickClerkUser(event.data);
       if (!user?.id || !user?.email) return { skipped: true };
       await prisma.user.upsert({
@@ -35,10 +35,10 @@ const clerkUserCreated = inngest.createFunction(
 );
 
 const clerkUserUpdated = inngest.createFunction(
-  { id: "clerk.user.updated" },
-  { event: "clerk/user.updated" },
+  { id: 'clerk.user.updated' },
+  { event: 'clerk/user.updated' },
   async ({ event, step }) => {
-    return step.run("update-user", async () => {
+    return step.run('update-user', async () => {
       const user = pickClerkUser(event.data);
       if (!user?.id) return { skipped: true };
       const { id, ...data } = user;
@@ -49,10 +49,10 @@ const clerkUserUpdated = inngest.createFunction(
 );
 
 const clerkUserDeleted = inngest.createFunction(
-  { id: "clerk.user.deleted" },
-  { event: "clerk/user.deleted" },
+  { id: 'clerk.user.deleted' },
+  { event: 'clerk/user.deleted' },
   async ({ event, step }) => {
-    return step.run("delete-user", async () => {
+    return step.run('delete-user', async () => {
       const id = event.data?.id;
       if (!id) return { skipped: true };
       await prisma.user.deleteMany({ where: { id } });
