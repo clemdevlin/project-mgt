@@ -3,7 +3,7 @@ import axios from "axios";
 // const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const api = axios.create({
-  baseURL: "http://localhost:5001/api",
+  baseURL: "https://project-mgt-lyart.vercel.app/api",
   withCredentials: true,
 });
 
