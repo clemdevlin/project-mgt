@@ -15,11 +15,13 @@
 
 ## 📖 Table of Contents
 
-- [✨ Features](#-features)
-- [🛠️ Tech Stack](#-tech-stack)
-- [🚀 Getting Started](#-getting-started)
-- [🤝 Contributing](#-contributing)
-- [📜 License](#-license)
+- [📖 Table of Contents](#-table-of-contents)
+- [📝 Features](#-features-)
+- [🛠️ Tech Stack](#️-tech-stack-)
+- [🚀 Getting Started](#-getting-started-)
+- [Project Environment variables](#project-environment-variables)
+- [🤝 Contributing](#-contributing-)
+- [📜 License](#-license-)
 
 ---
 
@@ -63,6 +65,15 @@ Open [http://localhost:5173](http://localhost:5173) with your browser to see the
 You can start editing the page by modifying `src/App.jsx`. The page auto-updates as you edit the file.
 
 ---
+
+## Project Environment variables
+
+```env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SIGN_IN_URL=/auth/signin
+CLERK_SIGN_UP_URL=/auth/signup
+VITE_API_BASE_URL=http://localhost:5001/api
+```
 
 ## 🤝 Contributing <a name="-contributing"></a>
 
