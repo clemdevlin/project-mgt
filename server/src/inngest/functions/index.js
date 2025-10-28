@@ -9,6 +9,7 @@ const pickClerkUser = data => {
   return {
     id: data?.id,
     email,
+    name: data?.first_name || 'user',
     firstName: data?.first_name || null,
     lastName: data?.last_name || null,
     imageUrl: data?.image_url || null,
