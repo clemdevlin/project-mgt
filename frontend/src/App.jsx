@@ -6,8 +6,9 @@ import Projects from "./pages/Projects";
 import Team from "./pages/Team";
 import ProjectDetails from "./pages/ProjectDetails";
 import TaskDetails from "./pages/TaskDetails";
-import { SignIn, SignUp } from "@clerk/clerk-react";
 import AuthLayout from "./components/AuthLayout";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 const App = () => {
   return (
