@@ -23,7 +23,10 @@ app.set('trust proxy', true);
 app.use(helmet());
 app.use(
   cors({
-    origin: 'http://localhost:5174',
+    origin: [
+      'http://localhost:5174',
+      'https://taskflow-alpha-murex.vercel.app',
+    ],
     credentials: true,
   })
 );
