@@ -12,6 +12,9 @@ import notFound from './middleware/notFound.js';
 import errorHandler from './middleware/errorHandler.js';
 import workspaceRouter from '#routes/workspace.route.js';
 import { protect } from '#middleware/auth.middleware.js';
+import projectRouter from '#routes/project.route.js';
+import taskRouter from '#routes/task.route.js';
+import commentRouter from '#routes/comment.route.js';
 
 const app = express();
 
@@ -43,6 +46,9 @@ app.use('/api/inngest', inngestHandler);
 
 // Routes
 app.use('/api/workspaces', protect, workspaceRouter);
+app.use('/api/projects', protect, projectRouter);
+app.use('/api/tasks', protect, taskRouter);
+app.use('/api/comments', protect, commentRouter);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -9,4 +9,9 @@ export const env = {
   inngestSigningKey: process.env.INNGEST_SIGNING_KEY || '',
   databaseUrl: process.env.DATABASE_URL || '',
   directUrl: process.env.DIRECT_URL || '',
+  mailPass: process.env.MAIL_PASS || '',
+  mailUser: process.env.MAIL_USER || 'kwasiclement764@gmail.com',
+  stmpUser: process.env.SMTP_USER || '',
+  stmpPass: process.env.SMTP_PASS || '',
+  senderEmail: process.env.SENDER_EMAIL || '',
 };
