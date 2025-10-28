@@ -4,12 +4,12 @@ import { logger } from './logger.js';
 
 // Create a test account or replace with real credentials.
 export const transporter = nodemailer.createTransport({
-  host: 'smtp-relay.brevo.com',
+  host: 'smtp.gmail.com',
   port: 587,
   secure: false, // true for 465, false for other ports
   auth: {
-    user: env.stmpUser,
-    pass: env.stmpPass,
+    user: env.mailUser,
+    pass: env.mailPass,
   },
 });
 
