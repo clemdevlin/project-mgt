@@ -7,8 +7,9 @@
     "node": ">=18"
   },
   "scripts": {
-    "start": "node src/server.js",
+    "start": "src/server.js",
     "dev": "nodemon --watch src --ext js --exec node src/server.js",
+    "postinstall": "prisma generate && prisma db push",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
