@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { logger } from '#config/logger.js';
 
 export const protect = async (req, res, next) => {

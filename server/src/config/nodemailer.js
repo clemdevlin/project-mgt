@@ -1,4 +1,3 @@
-/* eslint-disable */
 import nodemailer from 'nodemailer';
 import { env } from './env.js';
 import { logger } from './logger.js';

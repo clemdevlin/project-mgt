@@ -1,4 +1,3 @@
-/* eslint-disable */
 import {
   addComment,
   getTaskComments,

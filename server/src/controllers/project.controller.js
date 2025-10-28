@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { logger } from '#config/logger.js';
 import { prisma } from '#lib/prisma.js';
 
