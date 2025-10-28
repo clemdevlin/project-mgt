@@ -163,7 +163,7 @@ const sendTaskAssignmentEmail = inngest.createFunction(
                   </p>
 
                   <p style="color: #4b5563; font-size: 15px; line-height: 1.6;">
-                    A new task titled <strong style="color: #111827;">“${task.title}”</strong> has been created in the project <strong>${origin}</strong>.
+                    A new task titled <strong style="color: #111827;">“${task.title}”</strong> has been created in the project <strong>${task.project.name}</strong>.
                     <br>
                     Please make sure to review and complete it before the due date.
                   </p>
@@ -179,7 +179,7 @@ const sendTaskAssignmentEmail = inngest.createFunction(
                   </div>
 
                   <div style="margin-top: 20px; text-align: center;">
-                    <a href='${origin}' style="display: inline-block; background-color: #2563eb; color: #ffffff; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-size: 14px; font-weight: bold;">
+                    <a href='${origin}/taskDetails?projectId=${task.projectId}&taskId=${taskId}' style="display: inline-block; background-color: #2563eb; color: #ffffff; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-size: 14px; font-weight: bold;">
                       View Task
                     </a>
                   </div>
@@ -225,7 +225,7 @@ const sendTaskAssignmentEmail = inngest.createFunction(
                         </p>
 
                         <p style="color: #4b5563; font-size: 15px; line-height: 1.6;">
-                          This is a friendly reminder that your assigned task <strong style="color: #111827;">“${task.title}”</strong> from the project <strong>${origin}</strong> was due on <strong>${new Date(task.due_date).toLocaleDateString()}</strong>.
+                          This is a friendly reminder that your assigned task <strong style="color: #111827;">“${task.title}”</strong> from the project <strong>${task.project.name}</strong> was due on <strong>${new Date(task.due_date).toLocaleDateString()}</strong>.
                           <br><br>
                           Please review and complete it as soon as possible to keep the project on track.
                         </p>
@@ -238,7 +238,7 @@ const sendTaskAssignmentEmail = inngest.createFunction(
                         </div>
 
                         <div style="margin-top: 20px; text-align: center;">
-                          <a href="${origin}" style="display: inline-block; background-color: #dc2626; color: #ffffff; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-size: 14px; font-weight: bold;">
+                          <a href='${origin}/taskDetails?projectId=${task.projectId}&taskId=${taskId}' style="display: inline-block; background-color: #dc2626; color: #ffffff; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-size: 14px; font-weight: bold;">
                             Review Task
                           </a>
                         </div>
